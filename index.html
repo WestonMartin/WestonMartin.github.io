@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,21 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Weston Martin | Business Intelligence Portfolio</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
   <style>
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: #f5f7fa;
-      color: #1f2937;
+      background:
+        radial-gradient(circle at top left, rgba(37,99,235,0.18), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(14,165,233,0.15), transparent 30%),
+        linear-gradient(135deg, #0f172a 0%, #111827 45%, #1e293b 100%);
+      color: #e5e7eb;
       line-height: 1.6;
+      min-height: 100vh;
     }
 
     a {
@@ -37,9 +42,10 @@
     /* NAVBAR */
 
     nav {
-      background: white;
+      background: rgba(15, 23, 42, 0.85);
       padding: 20px 0;
-      border-bottom: 1px solid #e5e7eb;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(12px);
       position: sticky;
       top: 0;
       z-index: 100;
@@ -54,43 +60,48 @@
     .logo {
       font-size: 1.2rem;
       font-weight: bold;
-      color: #111827;
+      color: #f9fafb;
     }
 
     .nav-links {
       display: flex;
       gap: 25px;
       font-size: 0.95rem;
-      color: #4b5563;
+      color: #cbd5e1;
+    }
+
+    .nav-links a {
+      transition: 0.2s ease;
     }
 
     .nav-links a:hover {
-      color: #2563eb;
+      color: #60a5fa;
     }
 
     /* HERO */
 
     .hero {
-      padding: 90px 0 70px;
+      padding: 110px 0 90px;
     }
 
     .hero h1 {
-      font-size: 3.5rem;
+      font-size: 3.8rem;
       margin-bottom: 15px;
-      color: #111827;
+      color: #f8fafc;
+      line-height: 1.1;
     }
 
     .hero h2 {
       font-size: 1.4rem;
-      color: #2563eb;
+      color: #60a5fa;
       margin-bottom: 25px;
       font-weight: normal;
     }
 
     .hero p {
-      max-width: 750px;
+      max-width: 760px;
       font-size: 1.1rem;
-      color: #4b5563;
+      color: #cbd5e1;
       margin-bottom: 35px;
     }
 
@@ -100,11 +111,18 @@
       flex-wrap: wrap;
     }
 
+    /* BUTTONS */
+
     .btn {
       padding: 12px 20px;
-      border-radius: 8px;
+      border-radius: 10px;
       font-weight: bold;
-      transition: 0.2s;
+      transition: 0.2s ease;
+      box-shadow: 0 0 20px rgba(37,99,235,0.15);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
     }
 
     .btn-primary {
@@ -117,13 +135,14 @@
     }
 
     .btn-secondary {
-      border: 1px solid #d1d5db;
-      background: white;
-      color: #374151;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.05);
+      color: #e2e8f0;
+      backdrop-filter: blur(8px);
     }
 
     .btn-secondary:hover {
-      background: #f3f4f6;
+      background: rgba(255,255,255,0.1);
     }
 
     /* SECTIONS */
@@ -135,44 +154,47 @@
     .section-title {
       font-size: 2rem;
       margin-bottom: 40px;
-      color: #111827;
+      color: #f8fafc;
     }
 
     /* PROJECTS */
 
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 25px;
     }
 
     .project-card {
-      background: white;
+      background: rgba(15, 23, 42, 0.75);
       padding: 30px;
-      border-radius: 14px;
-      border: 1px solid #e5e7eb;
-      transition: 0.2s ease;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(12px);
+      transition: 0.25s ease;
     }
 
     .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+      transform: translateY(-6px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+      border-color: rgba(96,165,250,0.3);
     }
 
     .project-card h3 {
       margin-bottom: 15px;
-      color: #111827;
+      color: #f8fafc;
+      font-size: 1.4rem;
     }
 
     .project-card p {
-      color: #4b5563;
+      color: #cbd5e1;
       margin-bottom: 20px;
     }
 
     .tech-stack {
       margin-bottom: 20px;
-      font-size: 0.9rem;
-      color: #2563eb;
+      font-size: 0.92rem;
+      color: #60a5fa;
       font-weight: bold;
     }
 
@@ -182,7 +204,7 @@
     }
 
     .project-links a {
-      color: #2563eb;
+      color: #60a5fa;
       font-weight: bold;
       font-size: 0.95rem;
     }
@@ -196,15 +218,16 @@
     }
 
     .skill-box {
-      background: white;
+      background: rgba(15, 23, 42, 0.75);
       padding: 25px;
-      border-radius: 14px;
-      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(12px);
     }
 
     .skill-box h3 {
       margin-bottom: 15px;
-      color: #111827;
+      color: #f8fafc;
     }
 
     .skill-box ul {
@@ -213,44 +236,63 @@
 
     .skill-box li {
       margin-bottom: 10px;
-      color: #4b5563;
+      color: #cbd5e1;
     }
 
     /* ABOUT */
 
     .about-box {
-      background: white;
+      background: rgba(15, 23, 42, 0.75);
       padding: 35px;
-      border-radius: 14px;
-      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(12px);
     }
 
     .about-box p {
-      color: #4b5563;
-      margin-bottom: 15px;
+      color: #cbd5e1;
+      margin-bottom: 18px;
+    }
+
+    .about-buttons {
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
     }
 
     /* FOOTER */
 
     footer {
       text-align: center;
-      padding: 40px 0;
-      color: #6b7280;
+      padding: 50px 0;
+      color: #94a3b8;
       font-size: 0.95rem;
     }
 
+    /* MOBILE */
+
     @media (max-width: 768px) {
 
+      .hero {
+        padding-top: 90px;
+      }
+
       .hero h1 {
-        font-size: 2.5rem;
+        font-size: 2.7rem;
       }
 
       .hero h2 {
-        font-size: 1.2rem;
+        font-size: 1.15rem;
+      }
+
+      .nav-content {
+        flex-direction: column;
+        gap: 15px;
       }
 
       .nav-links {
-        gap: 15px;
+        gap: 18px;
         font-size: 0.85rem;
       }
 
@@ -265,24 +307,33 @@
 
   <nav>
     <div class="container nav-content">
-      <div class="logo">Weston Martin</div>
+
+      <div class="logo">
+        Weston Martin
+      </div>
 
       <div class="nav-links">
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
         <a href="#about">About</a>
       </div>
+
     </div>
   </nav>
 
   <!-- HERO -->
 
   <section class="hero">
+
     <div class="container">
 
-      <h1>Business Intelligence & Data Automation</h1>
+      <h1>
+        Business Intelligence & Data Automation
+      </h1>
 
-      <h2>Operational Analytics • Workflow Automation • Process Optimization</h2>
+      <h2>
+        Operational Analytics • Workflow Automation • Process Optimization
+      </h2>
 
       <p>
         I build scalable operational reporting systems, automation workflows,
@@ -295,7 +346,25 @@
         <a class="btn btn-primary"
            href="https://github.com/WestonMartin"
            target="_blank">
-          View GitHub
+          GitHub
+        </a>
+
+        <a class="btn btn-secondary"
+           href="Resume_Weston.Martin_2026.pdf"
+           target="_blank">
+          Resume
+        </a>
+
+        <a class="btn btn-secondary"
+           href="Weston.Martin_CoverLetter_2026.pdf"
+           target="_blank">
+          Cover Letter
+        </a>
+
+        <a class="btn btn-secondary"
+           href="https://linkedin.com/in/westonsmartin"
+           target="_blank">
+          LinkedIn
         </a>
 
         <a class="btn btn-secondary"
@@ -306,14 +375,18 @@
       </div>
 
     </div>
+
   </section>
 
   <!-- PROJECTS -->
 
   <section id="projects">
+
     <div class="container">
 
-      <h2 class="section-title">Featured Projects</h2>
+      <h2 class="section-title">
+        Featured Projects
+      </h2>
 
       <div class="projects-grid">
 
@@ -321,7 +394,9 @@
 
         <div class="project-card">
 
-          <h3>ProviderAudits</h3>
+          <h3>
+            ProviderAudits
+          </h3>
 
           <div class="tech-stack">
             Google Apps Script • Google Sheets • Workflow Automation
@@ -336,10 +411,12 @@
           </p>
 
           <div class="project-links">
+
             <a href="https://github.com/WestonMartin/ProviderAudits"
                target="_blank">
               GitHub Repo →
             </a>
+
           </div>
 
         </div>
@@ -348,7 +425,9 @@
 
         <div class="project-card">
 
-          <h3>AllocationCodes</h3>
+          <h3>
+            AllocationCodes
+          </h3>
 
           <div class="tech-stack">
             Data Standardization • Financial Logic • Reporting Systems
@@ -362,10 +441,12 @@
           </p>
 
           <div class="project-links">
+
             <a href="https://github.com/WestonMartin/AllocationCodes"
                target="_blank">
               GitHub Repo →
             </a>
+
           </div>
 
         </div>
@@ -374,7 +455,9 @@
 
         <div class="project-card">
 
-          <h3>CodeCatalog</h3>
+          <h3>
+            CodeCatalog
+          </h3>
 
           <div class="tech-stack">
             Documentation • Code Governance • Automation Systems
@@ -388,10 +471,12 @@
           </p>
 
           <div class="project-links">
+
             <a href="https://github.com/WestonMartin/CodeCatalog"
                target="_blank">
               GitHub Repo →
             </a>
+
           </div>
 
         </div>
@@ -399,19 +484,26 @@
       </div>
 
     </div>
+
   </section>
 
   <!-- SKILLS -->
 
   <section id="skills">
+
     <div class="container">
 
-      <h2 class="section-title">Skills</h2>
+      <h2 class="section-title">
+        Skills
+      </h2>
 
       <div class="skills-grid">
 
         <div class="skill-box">
-          <h3>Languages & Automation</h3>
+
+          <h3>
+            Languages & Automation
+          </h3>
 
           <ul>
             <li>Google Apps Script</li>
@@ -419,10 +511,14 @@
             <li>SQL</li>
             <li>Workflow Automation</li>
           </ul>
+
         </div>
 
         <div class="skill-box">
-          <h3>Data & Reporting</h3>
+
+          <h3>
+            Data & Reporting
+          </h3>
 
           <ul>
             <li>Google Sheets</li>
@@ -430,10 +526,14 @@
             <li>KPI Reporting</li>
             <li>Data Validation</li>
           </ul>
+
         </div>
 
         <div class="skill-box">
-          <h3>Business Intelligence</h3>
+
+          <h3>
+            Business Intelligence
+          </h3>
 
           <ul>
             <li>Operational Analytics</li>
@@ -441,19 +541,24 @@
             <li>Data Standardization</li>
             <li>Reporting Systems</li>
           </ul>
+
         </div>
 
       </div>
 
     </div>
+
   </section>
 
   <!-- ABOUT -->
 
   <section id="about">
+
     <div class="container">
 
-      <h2 class="section-title">About</h2>
+      <h2 class="section-title">
+        About
+      </h2>
 
       <div class="about-box">
 
@@ -475,17 +580,42 @@
           informed decisions.
         </p>
 
+        <div class="about-buttons">
+
+          <a class="btn btn-secondary"
+             href="Resume_Weston.Martin_2026.pdf"
+             target="_blank">
+            Resume
+          </a>
+
+          <a class="btn btn-secondary"
+             href="Weston.Martin_CoverLetter_2026.pdf"
+             target="_blank">
+            Cover Letter
+          </a>
+
+          <a class="btn btn-secondary"
+             href="https://linkedin.com/in/westonsmartin"
+             target="_blank">
+            LinkedIn
+          </a>
+
+        </div>
+
       </div>
 
     </div>
+
   </section>
 
   <!-- FOOTER -->
 
   <footer>
+
     <div class="container">
       © 2026 Weston Martin • Business Intelligence Portfolio
     </div>
+
   </footer>
 
 </body>
