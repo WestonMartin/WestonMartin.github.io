@@ -1,0 +1,492 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weston Martin | Business Intelligence Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f7fa;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    /* NAVBAR */
+
+    nav {
+      background: white;
+      padding: 20px 0;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #111827;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      font-size: 0.95rem;
+      color: #4b5563;
+    }
+
+    .nav-links a:hover {
+      color: #2563eb;
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 90px 0 70px;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 15px;
+      color: #111827;
+    }
+
+    .hero h2 {
+      font-size: 1.4rem;
+      color: #2563eb;
+      margin-bottom: 25px;
+      font-weight: normal;
+    }
+
+    .hero p {
+      max-width: 750px;
+      font-size: 1.1rem;
+      color: #4b5563;
+      margin-bottom: 35px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .btn-primary {
+      background: #2563eb;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #1d4ed8;
+    }
+
+    .btn-secondary {
+      border: 1px solid #d1d5db;
+      background: white;
+      color: #374151;
+    }
+
+    .btn-secondary:hover {
+      background: #f3f4f6;
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 70px 0;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 40px;
+      color: #111827;
+    }
+
+    /* PROJECTS */
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+
+    .project-card {
+      background: white;
+      padding: 30px;
+      border-radius: 14px;
+      border: 1px solid #e5e7eb;
+      transition: 0.2s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    }
+
+    .project-card h3 {
+      margin-bottom: 15px;
+      color: #111827;
+    }
+
+    .project-card p {
+      color: #4b5563;
+      margin-bottom: 20px;
+    }
+
+    .tech-stack {
+      margin-bottom: 20px;
+      font-size: 0.9rem;
+      color: #2563eb;
+      font-weight: bold;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 15px;
+    }
+
+    .project-links a {
+      color: #2563eb;
+      font-weight: bold;
+      font-size: 0.95rem;
+    }
+
+    /* SKILLS */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .skill-box {
+      background: white;
+      padding: 25px;
+      border-radius: 14px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .skill-box h3 {
+      margin-bottom: 15px;
+      color: #111827;
+    }
+
+    .skill-box ul {
+      list-style: none;
+    }
+
+    .skill-box li {
+      margin-bottom: 10px;
+      color: #4b5563;
+    }
+
+    /* ABOUT */
+
+    .about-box {
+      background: white;
+      padding: 35px;
+      border-radius: 14px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .about-box p {
+      color: #4b5563;
+      margin-bottom: 15px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      text-align: center;
+      padding: 40px 0;
+      color: #6b7280;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 768px) {
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero h2 {
+        font-size: 1.2rem;
+      }
+
+      .nav-links {
+        gap: 15px;
+        font-size: 0.85rem;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav>
+    <div class="container nav-content">
+      <div class="logo">Weston Martin</div>
+
+      <div class="nav-links">
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#about">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="hero">
+    <div class="container">
+
+      <h1>Business Intelligence & Data Automation</h1>
+
+      <h2>Operational Analytics • Workflow Automation • Process Optimization</h2>
+
+      <p>
+        I build scalable operational reporting systems, automation workflows,
+        and business intelligence solutions that improve efficiency,
+        standardize data processes, and support data-driven decision making.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a class="btn btn-primary"
+           href="https://github.com/WestonMartin"
+           target="_blank">
+          View GitHub
+        </a>
+
+        <a class="btn btn-secondary"
+           href="#projects">
+          View Projects
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+
+  <section id="projects">
+    <div class="container">
+
+      <h2 class="section-title">Featured Projects</h2>
+
+      <div class="projects-grid">
+
+        <!-- PROJECT 1 -->
+
+        <div class="project-card">
+
+          <h3>ProviderAudits</h3>
+
+          <div class="tech-stack">
+            Google Apps Script • Google Sheets • Workflow Automation
+          </div>
+
+          <p>
+            Developed automated provider audit workflows and operational
+            tracking systems using Google Apps Script and Google Sheets.
+            Built logic-driven reporting processes to identify missing
+            documentation, track audit completion statuses, and reduce
+            manual administrative workload.
+          </p>
+
+          <div class="project-links">
+            <a href="https://github.com/WestonMartin/ProviderAudits"
+               target="_blank">
+              GitHub Repo →
+            </a>
+          </div>
+
+        </div>
+
+        <!-- PROJECT 2 -->
+
+        <div class="project-card">
+
+          <h3>AllocationCodes</h3>
+
+          <div class="tech-stack">
+            Data Standardization • Financial Logic • Reporting Systems
+          </div>
+
+          <p>
+            Built allocation mapping systems designed to standardize
+            financial categorization and automate organizational reporting
+            logic across multiple operational datasets. Focused on improving
+            consistency, scalability, and reporting accuracy.
+          </p>
+
+          <div class="project-links">
+            <a href="https://github.com/WestonMartin/AllocationCodes"
+               target="_blank">
+              GitHub Repo →
+            </a>
+          </div>
+
+        </div>
+
+        <!-- PROJECT 3 -->
+
+        <div class="project-card">
+
+          <h3>CodeCatalog</h3>
+
+          <div class="tech-stack">
+            Documentation • Code Governance • Automation Systems
+          </div>
+
+          <p>
+            Designed a centralized repository for reusable scripting logic,
+            operational automations, and standardized development references.
+            Improved maintainability, scalability, and consistency across
+            internal automation projects and reporting workflows.
+          </p>
+
+          <div class="project-links">
+            <a href="https://github.com/WestonMartin/CodeCatalog"
+               target="_blank">
+              GitHub Repo →
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+
+  <section id="skills">
+    <div class="container">
+
+      <h2 class="section-title">Skills</h2>
+
+      <div class="skills-grid">
+
+        <div class="skill-box">
+          <h3>Languages & Automation</h3>
+
+          <ul>
+            <li>Google Apps Script</li>
+            <li>JavaScript</li>
+            <li>SQL</li>
+            <li>Workflow Automation</li>
+          </ul>
+        </div>
+
+        <div class="skill-box">
+          <h3>Data & Reporting</h3>
+
+          <ul>
+            <li>Google Sheets</li>
+            <li>Excel</li>
+            <li>KPI Reporting</li>
+            <li>Data Validation</li>
+          </ul>
+        </div>
+
+        <div class="skill-box">
+          <h3>Business Intelligence</h3>
+
+          <ul>
+            <li>Operational Analytics</li>
+            <li>Process Optimization</li>
+            <li>Data Standardization</li>
+            <li>Reporting Systems</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+
+  <section id="about">
+    <div class="container">
+
+      <h2 class="section-title">About</h2>
+
+      <div class="about-box">
+
+        <p>
+          I specialize in operational analytics, automation systems,
+          and business intelligence workflows that improve organizational
+          efficiency and reporting accuracy.
+        </p>
+
+        <p>
+          My work focuses on bridging the gap between business operations
+          and technical systems by building scalable automation processes,
+          reporting logic, and data-driven operational solutions.
+        </p>
+
+        <p>
+          I enjoy solving process inefficiencies, standardizing workflows,
+          and creating systems that allow teams to make faster and more
+          informed decisions.
+        </p>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    <div class="container">
+      © 2026 Weston Martin • Business Intelligence Portfolio
+    </div>
+  </footer>
+
+</body>
+</html>
